@@ -19,8 +19,12 @@ spec:
           env:
             - name: TZ
               value: Asia/Seoul
-            - name: DATABASE_URL
-              value: jdbc:mariadb://mariadb:3306/krampoline
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:mysql://mariadb:3306/krampoline"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "root"
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "root"
           resources:
             requests:
               memory: 1Gi
