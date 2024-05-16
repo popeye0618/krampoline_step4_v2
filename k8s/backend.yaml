@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -51,6 +50,17 @@ spec:
               value: "6379"
             - name: SPRING_MAIL_AUTH_CODE_EXPIRATION_MILLIS
               value: "1800000"
+            - name: SPRING_APPLICATION_JSON
+              value: >
+                {
+                  "logging": {
+                    "level": {
+                      "org.springframework.web": "DEBUG",
+                      "org.springframework.security": "DEBUG",
+                      "org.springframework.web.filter.CommonsRequestLoggingFilter": "DEBUG"
+                    }
+                  }
+                }
           resources:
             requests:
               memory: 1Gi
